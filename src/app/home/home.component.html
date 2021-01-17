@@ -1,0 +1,30 @@
+<div class="card mt-3">
+  <div class="card-header">Listado de clientes</div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-bordered">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Nombre</th>
+              <th scope="col">Telefono</th>
+              <th scope="col">Ciudad</th>
+              <th scope="col">Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let client of clients">
+              <th>{{ client.name }}</th>
+              <td>{{ client.phone }}</td>
+              <td>{{ client.city }}</td>
+              <td>
+                <a class="btn btn-primary btn-sm" routerLink="/getClient/{{ client.id }}">Ver/Editar</a>
+                <a class="btn btn-danger btn-sm" (click)="delete(client.id)">Eliminar</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
